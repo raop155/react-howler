@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import SoundManager from './components/SoundManager';
 
 function App() {
@@ -10,10 +11,17 @@ function App() {
   ];
 
   return (
-    <div className='App'>
+    <>
       <h1>React rehowl</h1>
-      <SoundManager sources={sources} />
-    </div>
+
+      <Router>
+        <Switch>
+          <Route path='/' exact>
+            <SoundManager sources={sources} />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 

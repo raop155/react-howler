@@ -10,7 +10,7 @@ const SoundManager = ({ sources }) => {
   useEffect(() => {
     console.log('index now:', index, 'srcs.length:', srcs.length);
     console.log('----------------------------');
-  }, [index]);
+  }, [index, srcs]);
 
   const handleEnd = () => {
     console.log('** handleEnd **');
