@@ -25,7 +25,7 @@ function App() {
         <Link to='/module3'>Module3</Link>
         <Switch>
           <Route path='/' exact></Route>
-          <Route path='/module1' exact>
+          <Route path='/module1/:id?' exact>
             <Module1 />
           </Route>
           <Route path='/module2' exact>
