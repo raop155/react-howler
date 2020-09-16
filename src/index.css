@@ -3,3 +3,50 @@
 *::after {
   box-sizing: border-box;
 }
+
+a {
+  color: lightblue;
+}
+
+html,
+body {
+  width: 100%;
+  color: white;
+  background: rgb(59, 59, 59);
+}
+
+.switch-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.switch-wrapper > div {
+  width: 100%;
+  position: absolute;
+}
+
+#Child1 {
+  opacity: 0;
+  animation: fade-in 0.5s ease-out;
+  animation-fill-mode: forwards;
+  display: block;
+  background: red;
+}
+
+#Child2 {
+  opacity: 0;
+  animation: fade-in 0.5s ease-out;
+  animation-fill-mode: forwards;
+  display: block;
+  background: blue;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100;
+  }
+}

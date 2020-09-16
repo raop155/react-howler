@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { AnimatedSwitch } from 'react-router-transition';
 import AudioManager from './components/AudioManager';
 import Module1 from './views/Module1';
 import Module2 from './views/Module2';
@@ -15,26 +16,29 @@ function App() {
 
   return (
     <>
-      <h1>React rehowl</h1>
-
-      {/* <AudioManager sources={sources} /> */}
+      <h1>React - Rehowl</h1>
       <AudioManager />
       <Router>
         <Link to='/module1'>Module1</Link>
         <Link to='/module2'>Module2</Link>
         <Link to='/module3'>Module3</Link>
-        <Switch>
+        <AnimatedSwitch
+          atEnter={{ opacity: 0 }}
+          atLeave={{ opacity: 0 }}
+          atActive={{ opacity: 1 }}
+          className='switch-wrapper'
+        >
           <Route path='/' exact></Route>
-          <Route path='/module1/:id?' exact>
+          <Route path='/module1'>
             <Module1 />
           </Route>
-          <Route path='/module2' exact>
+          <Route path='/module2'>
             <Module2 />
           </Route>
-          <Route path='/module3' exact>
+          <Route path='/module3'>
             <Module3 />
           </Route>
-        </Switch>
+        </AnimatedSwitch>
       </Router>
     </>
   );
