@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
-import { AnimatedSwitch } from 'react-router-transition';
+import { AnimatedSwitch, AnimatedRoute } from 'react-router-transition';
 import { useDispatch } from 'react-redux';
 import { setAudio } from '../redux';
 
@@ -26,22 +26,21 @@ const Module1 = (props) => {
 
   return (
     <>
-      <h2>Module1</h2>
-      <Link to={`${url}/child1`}>Child1</Link>
-      <Link to={`${url}/child2`}>Child2</Link>
-      {/* <AnimatedSwitch
-        atEnter={{ opacity: 0 }}
-        atLeave={{ opacity: 0 }}
-        atActive={{ opacity: 1 }}
-        className='switch-wrapper' 
-      >*/}
-      <Route path={`${path}/child1`}>
-        <Child1 />
-      </Route>
-      <Route path={`${path}/child2`}>
-        <Child2 />
-      </Route>
-      {/* </AnimatedSwitch> */}
+      <div id='Module1'>
+        <h2>Module1</h2>
+        <Link to={`${url}/child1`}>Child1</Link>
+        <Link to={`${url}/child2`}>Child2</Link>
+        <AnimatedSwitch
+          atEnter={{ opacity: 0 }}
+          atLeave={{ opacity: 0 }}
+          atActive={{ opacity: 1 }}
+          className='switch-wrapper'
+        >
+          <Route path={`${path}/child1`}>
+            <Child1 />
+          </Route>
+        </AnimatedSwitch>
+      </div>
     </>
   );
 };
